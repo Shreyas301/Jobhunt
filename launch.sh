@@ -1,9 +1,9 @@
 #!/bin/bash
-# JobHunter Pro - Linux/Mac Launch Script
+# JobStream Pro - Linux/Mac Launch Script
 
 echo ""
 echo "╔════════════════════════════════════════════════════════╗"
-echo "║           🚀 JobHunter Pro - Launcher                 ║"
+echo "║           🚀 JobStream Pro - Launcher                 ║"
 echo "╚════════════════════════════════════════════════════════╝"
 echo ""
 
@@ -45,7 +45,7 @@ fi
 
 # Launch the app
 echo ""
-echo "🚀 Starting JobHunter Pro..."
+echo "🚀 Starting JobStream Pro..."
 echo "   📍 Browser will open at: http://localhost:8501"
 echo "   📱 From phone: Get your IP (ifconfig) and go to http://YOUR_IP:8501"
 echo ""

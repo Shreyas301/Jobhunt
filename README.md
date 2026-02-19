@@ -1,4 +1,4 @@
-# 🚀 JobHunter Pro - CV-Based Job Discovery App
+# 🚀 JobStream Pro - CV-Based Job Discovery App
 
 An intelligent cross-platform (web & mobile) job discovery application that analyzes your CV and finds relevant job opportunities across multiple platforms with direct application links.
 
@@ -120,7 +120,7 @@ git push origin main
 4. Set environment variables (FIRECRAWL_API_KEY)
 5. Deploy!
 
-Your app will be live at: `https://your-username-jobhunter.streamlit.app`
+Your app will be live at: `https://your-username-JobStream.streamlit.app`
 
 ### Deploy to Mobile
 
@@ -195,9 +195,9 @@ MIT License - feel free to fork and modify!
 
 ## 🌟 Support
 
-- 📧 Email: support@jobhunterpro.com
+- 📧 Email: support@JobStreampro.com
 - 💬 Issues: GitHub Issues
-- 🐦 Twitter: @JobHunterProApp
+- 🐦 Twitter: @JobStreamProApp
 
 ---
 

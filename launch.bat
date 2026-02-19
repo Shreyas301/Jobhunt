@@ -1,9 +1,9 @@
 @echo off
-REM JobHunter Pro - Windows Launch Script
+REM JobStream Pro - Windows Launch Script
 
 echo.
 echo ╔════════════════════════════════════════════════════════╗
-echo ║           🚀 JobHunter Pro - Launcher                 ║
+echo ║           🚀 JobStream Pro - Launcher                 ║
 echo ╚════════════════════════════════════════════════════════╝
 echo.
 
@@ -47,7 +47,7 @@ if not exist ".env" (
 
 REM Launch the app
 echo.
-echo 🚀 Starting JobHunter Pro...
+echo 🚀 Starting JobStream Pro...
 echo    📍 Browser will open at: http://localhost:8501
 echo    📱 From phone: Get your IP and go to http://YOUR_IP:8501
 echo.

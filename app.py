@@ -24,7 +24,7 @@ HEADERS = {
 
 # --- 1. PAGE CONFIG (Mobile & Laptop Responsive) ---
 st.set_page_config(
-    page_title="JobHunter Pro",
+    page_title="JobStream",
     page_icon="💼",
     layout="wide",
     initial_sidebar_state="auto"
@@ -726,7 +726,7 @@ def get_platform_name(url: str) -> str:
     return "🔗 Job Board"
 
 # --- 6. MAIN UI ---
-st.title("🚀 JobHunter Pro")
+st.title("JobStream")
 st.markdown("**Instantly discover job opportunities that match your skills**")
 
 # Create responsive layout

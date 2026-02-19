@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-JobHunter Pro - Setup and Utility Helper Script
+JobStream Pro - Setup and Utility Helper Script
 This script helps with initial setup and provides useful utilities
 """
 
@@ -13,7 +13,7 @@ def print_banner():
     """Print welcome banner"""
     banner = """
     ╔══════════════════════════════════════════════════════════╗
-    ║                 🚀 JobHunter Pro Setup                   ║
+    ║                 🚀 JobStream Pro Setup                   ║
     ║        CV-Based Job Discovery Application               ║
     ╚══════════════════════════════════════════════════════════╝
     """
@@ -63,7 +63,7 @@ def setup_env_file():
 
 def run_app():
     """Run the Streamlit app"""
-    print("\n🚀 Launching JobHunter Pro...")
+    print("\n🚀 Launching JobStream Pro...")
     print("   - Opening http://localhost:8501")
     try:
         subprocess.run(["streamlit", "run", "app.py"])

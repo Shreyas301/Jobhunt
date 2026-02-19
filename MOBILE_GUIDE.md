@@ -1,6 +1,6 @@
 # 📱 Mobile Deployment Strategies
 
-This guide explains how to make JobHunter Pro work on your phone.
+This guide explains how to make JobStream Pro work on your phone.
 
 ---
 
@@ -40,8 +40,8 @@ This guide explains how to make JobHunter Pro work on your phone.
 # Step 2: Push code to GitHub
 git init
 git add .
-git commit -m "JobHunter Pro"
-git remote add origin https://github.com/USERNAME/jobhunter-pro.git
+git commit -m "JobStream Pro"
+git remote add origin https://github.com/USERNAME/JobStream-pro.git
 git push -u origin main
 
 # Step 3: Go to share.streamlit.io and connect GitHub repo
@@ -54,7 +54,7 @@ git push -u origin main
 # Click Deploy button!
 ```
 
-Your app will be at: `https://yourusername-jobhunter.streamlit.app`
+Your app will be at: `https://yourusername-JobStream.streamlit.app`
 
 ✅ Pros: Works everywhere, shareable link, always online  
 ✅ Cons: Requires internet, small free tier limits

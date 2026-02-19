@@ -1,4 +1,4 @@
-# 🚀 Quick Start Guide - JobHunter Pro
+# 🚀 Quick Start Guide - JobStream Pro
 
 ## ⚡ 5-Minute Setup
 
@@ -130,7 +130,7 @@ The app recognizes **50+ skills** including:
 # 1. Push to GitHub
 git init
 git add .
-git commit -m "JobHunter Pro"
+git commit -m "JobStream Pro"
 git push origin main
 
 # 2. Go to share.streamlit.io
@@ -139,7 +139,7 @@ git push origin main
 # 5. Deploy!
 ```
 
-**Your app URL:** `https://yourusername-jobhunter.streamlit.app`
+**Your app URL:** `https://yourusername-JobStream.streamlit.app`
 
 ### Share Link
 1. Deploy to Streamlit Cloud (above)
@@ -179,7 +179,7 @@ git push origin main
 - 📖 Check README.md for full docs
 - 🐛 Report issues on GitHub
 - 💬 Create a discussion
-- 📧 Email: support@jobhunterpro.com
+- 📧 Email: support@JobStreampro.com
 
 ---
 

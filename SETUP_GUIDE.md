@@ -1,4 +1,4 @@
-# 📋 JobHunter Pro - Complete Setup & Usage Guide
+# 📋 JobStream Pro - Complete Setup & Usage Guide
 
 ## 📂 Project Structure
 
@@ -112,7 +112,7 @@ In the sidebar ⬅️ , adjust:
 
 ### Different Network (Cloud)
 1. Deploy to Streamlit Cloud (automatic scaling)
-2. Get URL like: `https://yourusername-jobhunter.streamlit.app`
+2. Get URL like: `https://yourusername-JobStream.streamlit.app`
 3. Access from any phone with internet!
 
 See **MOBILE_GUIDE.md** for detailed deployment options.
@@ -318,8 +318,8 @@ New to this? Here's what to learn:
 ## 📞 Support
 
 - GitHub: [Your Repo URL]
-- Email: support@jobhunterpro.com
-- Twitter: @JobHunterProApp
+- Email: support@JobStreampro.com
+- Twitter: @JobStreamProApp
 - Issues: [GitHub Issues]
 
 ---
