@@ -23,70 +23,78 @@ HEADERS = {
 }
 
 # --- 1. PAGE CONFIG (Mobile & Laptop Responsive) ---
-st.set_page_config(
-    page_title="JobStream",
-    page_icon="💼",
-    layout="wide",
-    initial_sidebar_state="auto"
-)
+_preferred_icon = "logo.png"
+_fallback_icon = "logo.png"
+icon_to_use = _preferred_icon if os.path.exists(_preferred_icon) else _fallback_icon
+
+st.set_page_config(page_title="JobStream",
+                   page_icon=icon_to_use,
+                   layout="wide",
+                   initial_sidebar_state="auto")
 
 # Responsive Styling for Mobile/Laptop
 st.markdown("""
     <style>
-    * { margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    .stButton>button { 
-        width: 100%; 
-        border-radius: 8px; 
-        height: 3em; 
-        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-        color: white; 
-        font-weight: 600;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
+    :root{
+      --bg-gradient-1: #0f172a; /* deep navy */
+      --card-bg: rgba(255,255,255,0.03);
+      --glass-bg: rgba(255,255,255,0.04);
+      --accent-start: #7c3aed; /* purple */
+      --accent-end: #06b6d4; /* teal */
+      --muted: #9aa4bf;
+      --glass-border: rgba(255,255,255,0.06);
     }
-    .stButton>button:hover { 
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    .stApp {
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(124,58,237,0.12), transparent 10%),
+                  radial-gradient(900px 500px at 90% 80%, rgba(6,182,212,0.08), transparent 10%),
+                  linear-gradient(180deg, #071029 0%, #071b2a 100%);
+      color: #e6eef8;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-    .job-card {
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        padding: 20px;
-        margin: 10px 0;
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        transition: all 0.3s ease;
-    }
-    .job-card:hover {
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        border-color: #2563eb;
-    }
-    .skill-badge {
-        display: inline-block;
-        background-color: #e0f2fe;
-        color: #0369a1;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.85em;
-        margin: 4px 4px 4px 0;
-        font-weight: 500;
-    }
-    .platform-badge {
-        display: inline-block;
-        background-color: #fef3c7;
-        color: #92400e;
-        padding: 4px 10px;
-        border-radius: 16px;
-        font-size: 0.8em;
-        font-weight: 600;
-    }
-    @media (max-width: 768px) {
-        .stTabs [role="tab"] { font-size: 0.9em; }
-        .stColumn { margin-bottom: 1em; }
+    .app-header{display:flex;align-items:center;gap:16px;padding:18px 0}
+    .app-title{font-size:1.45rem;font-weight:800;letter-spacing:-0.5px}
+    .app-sub{color:var(--muted);font-size:0.95rem}
+    .hero-card{background:linear-gradient(135deg,var(--card-bg), rgba(255,255,255,0.02));border:1px solid var(--glass-border);backdrop-filter: blur(6px);border-radius:14px;padding:18px;margin-bottom:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:16px;margin:10px 0;border:1px solid var(--glass-border);box-shadow:0 6px 24px rgba(2,6,23,0.45)}
+    .job-card{display:flex;flex-direction:column;gap:10px}
+    .job-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .job-left{display:flex;flex-direction:column;gap:6px}
+    .job-title{font-size:1.06rem;font-weight:700;color:#fff}
+    .company{color:var(--muted);font-size:0.95rem}
+    .job-meta{display:flex;gap:8px;align-items:center}
+    .badge{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:white;padding:6px 10px;border-radius:999px;font-weight:700}
+    .skill-badge{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 8px;border-radius:8px;margin-right:6px;color:var(--muted)}
+    .apply-btn{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:white;padding:8px 14px;border-radius:12px;border:none;box-shadow:0 8px 30px rgba(124,58,237,0.12)}
+    .apply-btn:hover{transform:translateY(-2px);transition:all .18s ease}
+    .meta-muted{color:var(--muted);font-size:0.9rem}
+    .match-pill{background:linear-gradient(90deg,#10b981,#34d399);color:#022c22;padding:6px 10px;border-radius:999px;font-weight:700}
+    .small{font-size:0.85rem}
+    .results-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+    @media (max-width: 880px){
+      .results-grid{grid-template-columns:1fr}
     }
     </style>
 """, unsafe_allow_html=True)
+
+# App header with logo
+try:
+    col1, col2 = st.columns([0.08, 0.92])
+    with col1:
+        # prefer PNG if available, otherwise use SVG
+        logo_path = "logo.png" if os.path.exists("logo.png") else "logo.png"
+        st.image(logo_path, width=56)
+    with col2:
+        st.markdown(
+            """
+            <div style="display:flex;flex-direction:column;justify-content:center">
+              <span class="app-title">JobStream</span>
+              <span class="app-sub">Find jobs matched to your CV</span>
+            </div>
+            """, unsafe_allow_html=True
+        )
+except Exception:
+    # fallback: simple title if image can't be loaded
+    st.markdown("<h1 class='app-title'>JobStream</h1>", unsafe_allow_html=True)
 
 # Load API key from environment (backend only)
 fc_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
@@ -460,7 +468,7 @@ def fetch_tech_specific_jobs(query: str) -> list:
             'location': 'San Francisco / Remote',
             'salary': '$100K - $250K+',
             'description': f'Startup opportunities from Y Combinator. Browse monthly hiring threads for {query}.',
-            'platform': '🚀 HackerNews',
+            'platform': 'HackerNews',
             'job_type': 'Full-time / Founding roles',
             'posted_date': 'Monthly updates',
             'requirements': ['Startup experience', f'{query} expertise', 'Entrepreneurial spirit'],
@@ -726,7 +734,7 @@ def get_platform_name(url: str) -> str:
     return "🔗 Job Board"
 
 # --- 6. MAIN UI ---
-st.title("JobStream")
+st.title("Jobstream")
 st.markdown("**Instantly discover job opportunities that match your skills**")
 
 # Create responsive layout
@@ -924,7 +932,7 @@ with col2:
                 url = best_job.get('url', '')
                 if url:
                     st.link_button(
-                        f"🚀 APPLY NOW - {best_job.get('platform', 'Job Board')}",
+                        f"APPLY NOW - {best_job.get('platform', 'Job Board')}",
                         url,
                         use_container_width=True,
                         type="primary"
@@ -1001,7 +1009,7 @@ with col2:
                     url = job.get('url', '')
                     if url:
                         st.link_button(
-                            f"🚀 Apply Now - {job.get('platform', 'Job Board')}",
+                            f"Apply Now - {job.get('platform', 'Job Board')}",
                             url,
                             use_container_width=True,
                             type="secondary"
